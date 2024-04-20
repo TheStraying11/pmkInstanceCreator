@@ -2,11 +2,19 @@ import os, shutil, json, tarfile, sys
 from pathlib import Path
 os.environ['KIVY_NO_CONSOLELOG'] = '1'
 
-if len(sys.argv) > 1:
-	if len(sys.argv) < 5:
+args = None
+if '-c' in sys.argv:
+	flag = sys.argv.index('-c')
+	args = sys.argv[flag+1:]
+if '--console' in sys.argv:
+	flag = sys.argv.index('-console')
+	args = sys.argv[flag+1:]
+
+if args:
+	if len(args) != 4:
 		print('Usage: pmkInstanceCreator wwiseIntegrationPath wwiseSDKPath palworldModdingKitPath newInstancePath', flush=True)
 
-	wwiseIntegration, wwiseSDK, palworldModdingKit, newInstance = list(map(Path, sys.argv[1:]))
+	wwiseIntegration, wwiseSDK, palworldModdingKit, newInstance = list(map(Path, args))
 
 	conds = {
 		"Please provide a path for the WWise integration files, it cannot be the same folder as this program": wwiseIntegration == Path(),
