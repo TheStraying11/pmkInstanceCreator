@@ -13,7 +13,7 @@ Usage:
     - If you see a pop-up with the title: "Unhandled Exception", make a bug report in the issues tab, with exactly what you did, and the error shown in the popup (you can screenshot it)
 
 Run from source:
-  - Install python >= 3.11.3
+  - [Install python >= 3.11.3](https://www.python.org/downloads/)
   - [Install kivy >= 2.2.1](https://kivy.org/doc/stable/gettingstarted/installation.html)
   - clone the repository
   - run `python main.py`
