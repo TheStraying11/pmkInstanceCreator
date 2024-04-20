@@ -4,7 +4,7 @@ GUI/CLI tool to automatically create a new instance of the PalWorld Modding Kit,
 Usage:
   - download the executable file for your operating system from the releases tab
   - CLI:
-    - `pmkInstanceCreator <wwiseIntegrationPath> <wwiseSDKPath> <palworldModdingKitPath> <newInstancePath>`
+    - `pmkInstanceCreator --console <wwiseIntegrationPath> <wwiseSDKPath> <palworldModdingKitPath> <newInstancePath>`
   - GUI:
     - launch the executable
     - select the folders using the browse dialog buttons, or by typing the path
