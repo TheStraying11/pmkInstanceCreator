@@ -1,0 +1,105 @@
+BoxLayout:
+	orientation: 'vertical'
+	size_hint: (1,1)
+	Label:
+	    text_size: self.size
+		text: 'WWise Integration Folder'
+		size_hint: (1, 0.09)
+		halign: 'left'
+		valign: 'bottom'
+
+	BoxLayout:
+		size_hint: (1, 0.09)
+
+		TextInput:
+			hint_text: 'C:\\palworldModding\\wwiseIntegration'
+			id: wwiseIntegration
+			size_hint: (0.9, 1)
+			multiline: False
+
+		Button:
+			text: 'browse'
+			on_press: app.browse(wwiseIntegration, 'Select WWise integration folder')
+			size_hint: (0.1, 1)
+
+	Label:
+	    text_size: self.size
+		text: 'WWise SDK Folder'
+		size_hint: (1, 0.09)
+		halign: 'left'
+		valign: 'bottom'
+	
+	BoxLayout:
+		size_hint: (1, 0.09)
+
+		TextInput:
+			hint_text: 'C:\\Program Files (x86)\\Audiokinetic\\Wwise 2021.1.11.7933\\SDK'
+			id: wwiseSDK
+			size_hint: (0.9, 1)
+			multiline: False
+
+		Button:
+			text: 'browse'
+			on_press: app.browse(wwiseSDK, 'Select WWise SDK folder')
+			size_hint: (0.1, 1)
+
+	Label:
+	    text_size: self.size
+		text: 'Palworld Modding Kit Folder'
+		size_hint: (1, 0.09)
+		halign: 'left'
+		valign: 'bottom'
+
+	BoxLayout:
+		size_hint: (1, 0.09)
+
+		TextInput:
+			hint_text: 'C:\\palworldModding\\PalworldModdingKit'
+			id: pmk
+			size_hint: (0.9, 1)
+			multiline: False
+
+		Button:
+			text: 'browse'
+			on_press: app.browse(pmk, 'Select PalWorld modding kit folder')
+			size_hint: (0.1, 1)
+
+	Label:
+	    text_size: self.size
+		text: 'New Instance Folder'
+		size_hint: (1, 0.09)
+		halign: 'left'
+		valign: 'bottom'
+
+	BoxLayout:
+		size_hint: (1, 0.09)
+
+		TextInput:
+			hint_text: 'C:\\palworldModding\\MyFirstPalworldMod'
+			id: instance
+			size_hint: (0.9, 1)
+			multiline: False
+
+		Button:
+			text: 'browse'
+			on_press: app.browse(instance, 'Choose a folder to save to')
+			size_hint: (0.1, 1)
+
+	Label:
+		size_hint: (1, 0.09)
+
+	BoxLayout:
+		orientation: 'horizontal'
+		size_hint: (1, 0.09)
+		Label:
+			size_hint: (0.3, 1)
+		Button:
+			id: createInstance
+			size_hint: (0.4, 1)
+			text: "Create Instance"
+			on_press: app.createNewInstance(wwiseIntegration.text, wwiseSDK.text, pmk.text, instance.text)
+		Label:
+			size_hint: (0.3, 1)
+
+	Label:
+		size_hint: (None, 0.09)
